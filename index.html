@@ -1,1 +1,50 @@
-piawai
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="Description" content="Ktupad MVC Framework by wawan sismadi">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<!-- <meta http-equiv="Cache-control" content="public" max-age="31536000"> -->
+<meta http-equiv="Cache-Control" content="max-age=1209600">
+
+<title>Piawai-ERP</title>
+<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+<link rel="stylesheet" type="text/css" href="web.css" async>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path id='pathws' d='M 6 17 L 2 17 L 2 12 C 2 -2 22 -2 22 12 C 22 20 14 22 12 22 L 7 22 L 7 12 C 7 5 17 5 17 12 C 17 15 14 17 12 17 L 11 17 L 11 14 L 12 14 C 13 14 14 13 14 12 C 14 9 10 9 10 12 L 10 19 L 12 19 C 14 19 19 17 19 12 C 19 2 5 2 5 12 L 5 14 L 6 14 Z' /></svg>" type="image/svg+xml">
+<!-- <link rel="stylesheet" href="./striped/style.css"> -->
+
+</head>
+<body >
+
+<div id="printarea" class="cetak hide"></div>
+<div id="depan" class="hide"></div>
+<main id="main" class="main spotlight">
+<div id="atas" class="navbar pDarkColor hide">
+<ul>
+<li style="float:left" class="accordion-menu" tabindex="0" >
+<i class="btn-form svgIco" id="btnMenu"></i>
+<ul id="kiri" class="accordion pColor" >
+  <li><input type="checkbox" id="1s" > <label class="btn-h" for="1s" >Info</label><ul>
+  <li><input type="checkbox" id="2s" > <label class="btn-h" for="2s" >Ktupad-2.0</label></li></ul>
+</li>
+</ul>
+</li>
+<li style="float:right">
+</li>
+<li style="float:left" id="li-kiri"   aria-hidden="true"></li>
+<li style="float:right" id="li-kanan"  aria-hidden="true">
+  <i class="ico-envelope"></i>
+<span id="badge" class="badge" data-badge="0"></span></li>
+</ul>
+</div>
+<div id="content" class="content"></div>
+
+<div class="pwp-list-group striped-bg-both">
+
+</div>
+
+<div id="bawah" class="pDarkColor toast hide"></div>
+</main>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
