@@ -10,7 +10,7 @@ setPage:function(arr){
 home:`
 <div class="row striped-bg-both" id="page3">
 
-<div class="col-2-3 artikel"><span class="judul2">Free Management Learning System </span><br>
+<div class="col-2-3 artikel"><span class="judul2">Free  Learning Management System </span><br>
 Gratis Program CMS, LMS, Presensi dan Akuntansi <br>
 <a href="#">download</a>
 </div>
@@ -395,4 +395,5 @@ Message *
 //     nav.classList.remove('active');
 //   });
 // });
+
 
