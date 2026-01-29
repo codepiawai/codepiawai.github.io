@@ -1,0 +1,57 @@
+<template id="temp-card">
+    <style>
+        .card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin: 10px; background: #fff; }
+        .card h3 { color: #007bff; margin: 0; }
+    </style>
+
+    <div class="card">
+        <h3>{{ nama }}</h3>
+        <p>Stok: {{ stok }}</p>
+        <button onclick="aksiKartu('{{ nama }}')">Detail</button>
+    </div>
+
+    <script>
+        // Script ini akan aktif setelah template masuk ke DOM
+        function aksiKartu(nama) {
+            alert('Melihat detail produk: ' + nama);
+        }
+    </script>
+</template>
+
+<template id="temp-alert">
+    <style>
+        .alert { padding: 10px; background: #fff3cd; border: 1px solid #ffeeba; color: #856404; }
+    </style>
+    <div class="alert">
+        <strong>Peringatan:</strong> {{ pesan }}
+    </div>
+</template>
+
+
+<template id="temp-menu1">
+</template>
+
+<template id="temp-menu2">
+</template>
+
+<template id="temp-menu">
+  <div class="logo hide"><a href="#"><i class="di-piawai"></i>Piawai</a></div>
+  <ul id='leftmenu'>
+  <li><a href="/{{ app }}" data-info="home"> <i class="di-house"></i>Home</a></li>
+  <li class="item"><a href="/{{ app }}/dashboard/" data-info="dashboard" > <i class="di-menu"></i>Dashboard</a></li>
+  <li><a href="/{{ app }}/profile/" data-info="profile" > <i class="di-person"></i>Profile</a></li>
+  </ul>
+</template>
+
+
+<template id="temp-footer">
+  Made with <svg class="svgicon" >
+  <defs>
+  <linearGradient id="gradient" x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" >
+  <stop stop-color="red" offset="0%"/>
+  <stop stop-color="red" offset="100%"/>
+  </linearGradient>
+  </defs>
+  <path  id="pathws" d="M12 10C7 5 4 14 12 17 20 14 17 5 12 10M12 22A8 8 0 0112 2 8 8 0 0112 22Z"></path>
+  </svg> by donat.id
+</template>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Piawai</title>
+<style>
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css" >
+
+
+</head>
+<body>
+
+<header class="header">
+<nav class="navbar">
+<span class="open-menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16"><g fill="#252a32"><path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z"/></g></svg>
+</span>
+<h1><a href="#" class="brand">Piawai</a></h1>
+<div class="profile-area">
+<span class="notification-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#252a32" viewBox="0 0 24 24"><path d="M12 24a2.5 2.5 0 0 0 2.5-2.5h-5A2.5 2.5 0 0 0 12 24zm6.36-6V11c0-3.07-1.63-5.64-4.5-6.32V4a1.5 1.5 0 0 0-3 0v.68C7.27 5.36 5.64 7.92 5.64 11v7L4 19v1h16v-1l-1.64-1z"/></svg>
+</span>
+<img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Profile" class="profile-avatar" id="profileToggle"/>
+<div class="profile-dropdown" id="profileDropdown">
+<a href="#">Profil</a>
+<a href="#">Pengaturan</a>
+<a href="#">Keluar</a>
+</div>
+</div>
+</nav>
+</header>
+
+<div class="menu-wrapper" id="menuWrapper">
+<ul class="menu" id="sidebarMenu">
+<li class="menu-block">
+<span class="close-menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#252a32" d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z"/></svg>
+</span>
+</li>
+<li><input type="text" class="search-input" placeholder="Cari menu..." id="menuSearch" /></li>
+</ul>
+</div>
+
+<div class="content" id="content">
+<h2>Data Menu</h2>
+
+<div class="tabs">
+<div class="tab active" onclick="switchTab('tableTab')">Tabel Data</div>
+<div class="tab" onclick="switchTab('instruksiTab')">Instruksi</div>
+</div>
+
+<div id="tableTab" class="tab-content active">
+<div class="search-box">
+<input type="text" id="search" placeholder="Cari...">
+<select id="perPage" onchange="changePerPage()">
+<option value="5">5</option>
+<option value="10" selected>10</option>
+<option value="25">25</option>
+<option value="50">50</option>
+<option value="all">All</option>
+</select>
+<button onclick="addItem()">Tambah</button>
+<!-- <button onclick="editSelected()">Edit Terpilih</button> -->
+<button onclick="deleteSelected()">Delete Terpilih</button>
+</div>
+<table id="dataTable">
+<thead>
+<tr>
+<th><input type="checkbox" onclick="toggleAll(this)"></th>
+<th>ID</th>
+<th>Nama</th>
+<th>Icon</th>
+<th>URL</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+<div class="pagination">
+<button onclick="prevPage()">&laquo; Prev</button>
+<span id="pageInfo"></span>
+<button onclick="nextPage()">Next &raquo;</button>
+</div>
+</div>
+
+<div id="instruksiTab" class="tab-content">
+<p>Gunakan tab "Tabel Data" untuk mengelola menu (tambah/edit/hapus). Gunakan tombol pencarian untuk memfilter data. Anda dapat memilih beberapa item dengan checkbox untuk tindakan massal.</p>
+</div>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3 id="modalTitle">Tambah/Edit Menu</h3>
+<input type="hidden" id="formId">
+<input type="text" id="formNama" placeholder="Nama">
+<input type="text" id="formIcon" placeholder="Icon">
+<input type="text" id="formUrl" placeholder="URL">
+<button onclick="saveItem()">Simpan</button>
+<button onclick="closeModal()">Batal</button>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+<script>
+</script>
+</body>
+</html>
