@@ -7,7 +7,10 @@
 
 <meta http-equiv="Cache-control" content="public" max-age="31536000">
 <meta http-equiv="Cache-Control" content="max-age=1209600">
+
+
 <!-- <link rel="manifest" href="https://donat.id/pwa/manifest.json"> -->
+
 <!-- Add to home screen for Safari on iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -38,16 +41,64 @@
 
 <link rel="stylesheet" type="text/css" href="/piawai/code/donat.css" async>
 <link rel="stylesheet" type="text/css" href="/piawai/templates/donat/style.css" >
+<link rel="stylesheet" type="text/css" href="style.css" >
+<!-- <link rel="stylesheet" type="text/css" href="code/svg.css" > -->
+
+
 </head>
 <body>
+
+
 <div id="modal" class="hide depan"></div>
 <div id="bawah"  class="toast hide" > info </div>
-<div id="target-menu" class="menu no-print" tabindex="0" ></div>
+
+
+<div id="pdf-modal" class="hide depan">
+<div class="modal">
+<div class="row modalbar">
+<span class="kiri" >Modal</span>
+<button class="kanan merah modalclose" onclick="closeModals()">X</button>
+</div>
+<canvas id="pdf-canvas" style="width:100%; border:1px solid #ccc;"></canvas>
+<div class="gButton"  >
+<button class="Button" onclick="prevPage()">Sebelumnya</button>
+<span>Halaman <span id="page-num">1</span> / <span id="page-count">1</span></span>
+<button class="Button" onclick="nextPage()">Selanjutnya</button>
+</div>
+
+</div>
+</div>
+
+<!-- menu -->
+<div id="menu" class="menu no-print" tabindex="0" >
+<div class="logo hide"><a href="#"><i class="di-piawai"></i>LMS</a></div>
+<ul id='leftmenu'>
+<li><a href="/lms/menu/"> <i class="di-menu"></i> Menu</a></li>
+<li class="item"><a href="/lms"> <i class="di-house"></i>Home</a></li>
+<li><a href="/lms/profile/" > <i class="di-person"></i> Profile</a></li>
+</ul>
+</div>
+
+
 <div id="main" class="main login" style="min-height: 400px;" >
+
   <div id="header" class="header" ></div>
-  <div id="topmenu" class="topmenu"> topmenu </div>
-  <div id="content" class="content" ></div>
-  <div id="target-footer" class="footer"></div>
+  <div id="topmenu" class="topmenu sticky-top"> disini </div>
+<div id="content" class="content" ></div>
+
+
+<div id="footer" class="footer" >
+Made with <svg class="svgicon" >
+<defs>
+<linearGradient id="gradient" x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" >
+<stop stop-color="red" offset="0%"/>
+<stop stop-color="red" offset="100%"/>
+</linearGradient>
+</defs>
+<path  id="pathws" d="M12 10C7 5 4 14 12 17 20 14 17 5 12 10M12 22A8 8 0 0112 2 8 8 0 0112 22Z"></path>
+</svg> by donat.id
+</div>
+
 </div>
 
 <script type="text/javascript" src="/piawai/code/donat.js"></script>
@@ -57,19 +108,25 @@
 <script type="text/javascript" src="/piawai/login/login.js"></script>
 <script type="text/javascript" src="/piawai/templates/donat/script.js"></script>
 
-<script type="text/javascript" src="/piawai/templates/admin/script.js"></script>
+
+<script type="text/javascript" src="soal.js"></script>
+
 <script type="text/javascript">
-loadModularComponent('temp-footer', 'target-footer',[{ pesan: "piawai" } ]);
-loadModularComponent('temp-menu', 'target-menu',[{ app: "." } ])
-.then(() => {if(typeof svg !== 'undefined') svg.di(); ActiveMenu('home')});
+svg.di();
+var slug = window.location.search
+  .replace("?", "")
+  .toLowerCase();
 
 
+if (slug=='admin') { soal.controller.view();}
+else{
+if (profile) {
+  soal.controller.kuis(profile);
+} else {
+  soal.controller.kuis();
+  console.warn("Course tidak ditemukan:", slug);
+}
+}
 </script>
-
-<script type="text/javascript" src="/piawai/web/home.js"></script>
-<script type="text/javascript">
-home.controller.home();
-</script>
-
 </body>
 </html>

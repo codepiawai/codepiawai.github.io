@@ -44,10 +44,10 @@
 <div id="bawah"  class="toast hide" > info </div>
 <div id="target-menu" class="menu no-print" tabindex="0" ></div>
 <div id="main" class="main login" style="min-height: 400px;" >
-  <div id="header" class="header" ></div>
-  <div id="topmenu" class="topmenu"> topmenu </div>
-  <div id="content" class="content" ></div>
-  <div id="target-footer" class="footer"></div>
+<div id="header" class="header" ></div>
+<div id="topmenu" class="topmenu sticky-top"> topmenu </div>
+<div id="content" class="content" ></div>
+<div id="target-footer" class="footer"></div>
 </div>
 
 <script type="text/javascript" src="/piawai/code/donat.js"></script>
@@ -60,15 +60,16 @@
 <script type="text/javascript" src="/piawai/templates/admin/script.js"></script>
 <script type="text/javascript">
 loadModularComponent('temp-footer', 'target-footer',[{ pesan: "piawai" } ]);
-loadModularComponent('temp-menu', 'target-menu',[{ app: "." } ])
-.then(() => {if(typeof svg !== 'undefined') svg.di(); ActiveMenu('home')});
+loadModularComponent('temp-menu', 'target-menu',[{ app: "lms" } ])
+.then(() => {svg.di();
 
-
+});
 </script>
 
-<script type="text/javascript" src="/piawai/web/home.js"></script>
+<script type="text/javascript" src="profile.js"></script>
+
 <script type="text/javascript">
-home.controller.home();
+profile.controller.profile();
 </script>
 
 </body>
